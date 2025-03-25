@@ -12,6 +12,19 @@ dependencies = [
 ]
 requires-python = ">= 3.12"
 
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pre-commit",
+    "ruff",
+    "ruff-lsp",
+    "ipython",
+    "matplotlib",
+    "jupyterlab",
+    "ipdb",
+    "marimo",
+]
+
 [tool.ruff]
 exclude = [
     "*.csv",
