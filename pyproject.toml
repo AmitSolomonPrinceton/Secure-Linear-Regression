@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure_linear_regression"
+description = "A package for simulating secure linear regression."
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "numpy",
+]
+requires-python = ">= 3.12"
