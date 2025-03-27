@@ -1,6 +1,6 @@
 import numpy as np
 
-from utils import round, matmul_gfq
+from utils import matmul_gfq, round
 
 
 class Quantizer():
