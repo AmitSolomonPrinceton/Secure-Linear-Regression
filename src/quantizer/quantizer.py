@@ -1,6 +1,6 @@
 import numpy as np
 
-from utils import round
+from utils import round, matmul_gfq
 
 
 class Quantizer():
@@ -61,3 +61,12 @@ class Quantizer():
         """
         x = np.where((x<self.p) & (x>=0.5*(self.p-1)), x-self.p, x)
         return 2**(-self.lx)*x
+
+    def multiply(self, A: np.array, B: np.array) -> np.array:
+        """
+        This function quantizes A and B, multiplies them, and returns the dequantized product.
+        """
+        Aq = self.quantize(A)
+        Bq = self.quantize(B)
+        prod = matmul_gfq(Aq, Bq)
+        return self.dequantize(prod)
